@@ -20,6 +20,10 @@
 		10BCAE2B27250BF0005C9657 /* GFBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BCAE2A27250BF0005C9657 /* GFBodyLabel.swift */; };
 		10BCAE2D27251106005C9657 /* GFAlerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BCAE2C27251106005C9657 /* GFAlerVC.swift */; };
 		10BCAE2F27251A0F005C9657 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BCAE2E27251A0F005C9657 /* UIViewController+Ext.swift */; };
+		10DE6445272955FF0021E093 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DE6444272955FF0021E093 /* Follower.swift */; };
+		10DE6447272997FD0021E093 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DE6446272997FD0021E093 /* User.swift */; };
+		10DE644C2729A5370021E093 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DE644B2729A5370021E093 /* NetworkManager.swift */; };
+		10DE644F2729B1B10021E093 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DE644E2729B1B10021E093 /* ErrorMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		10BCAE2A27250BF0005C9657 /* GFBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFBodyLabel.swift; sourceTree = "<group>"; };
 		10BCAE2C27251106005C9657 /* GFAlerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAlerVC.swift; sourceTree = "<group>"; };
 		10BCAE2E27251A0F005C9657 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		10DE6444272955FF0021E093 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
+		10DE6446272997FD0021E093 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		10DE644B2729A5370021E093 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		10DE644E2729B1B10021E093 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +78,10 @@
 		10BCAE092723AB69005C9657 /* Github Followers */ = {
 			isa = PBXGroup;
 			children = (
+				10DE644D2729B1690021E093 /* Uitillities */,
+				10DE64492729A5160021E093 /* Managers */,
 				10DE644127294D6E0021E093 /* Extentions */,
+				10DE6443272955BD0021E093 /* Modal */,
 				10DE644027294D3E0021E093 /* Custom View */,
 				10DE643F27294CDE0021E093 /* Screens */,
 				10DE644227294DCC0021E093 /* Support */,
@@ -118,6 +129,31 @@
 				10BCAE0C2723AB69005C9657 /* SceneDelegate.swift */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		10DE6443272955BD0021E093 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				10DE6444272955FF0021E093 /* Follower.swift */,
+				10DE6446272997FD0021E093 /* User.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		10DE64492729A5160021E093 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				10DE644B2729A5370021E093 /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		10DE644D2729B1690021E093 /* Uitillities */ = {
+			isa = PBXGroup;
+			children = (
+				10DE644E2729B1B10021E093 /* ErrorMessage.swift */,
+			);
+			path = Uitillities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,14 +226,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10DE6447272997FD0021E093 /* User.swift in Sources */,
 				10BCAE252724F93C005C9657 /* GFTextFeild.swift in Sources */,
 				10BCAE212723B730005C9657 /* FavoritesVC.swift in Sources */,
 				10BCAE2727250559005C9657 /* FolloweListVC.swift in Sources */,
 				10BCAE2F27251A0F005C9657 /* UIViewController+Ext.swift in Sources */,
 				10BCAE232723C0AD005C9657 /* GFButton.swift in Sources */,
 				10BCAE2B27250BF0005C9657 /* GFBodyLabel.swift in Sources */,
+				10DE644F2729B1B10021E093 /* ErrorMessage.swift in Sources */,
 				10BCAE2927250A53005C9657 /* GFTitleLabel.swift in Sources */,
+				10DE6445272955FF0021E093 /* Follower.swift in Sources */,
 				10BCAE1F2723B6CB005C9657 /* SearchVC.swift in Sources */,
+				10DE644C2729A5370021E093 /* NetworkManager.swift in Sources */,
 				10BCAE2D27251106005C9657 /* GFAlerVC.swift in Sources */,
 				10BCAE0B2723AB69005C9657 /* AppDelegate.swift in Sources */,
 				10BCAE0D2723AB69005C9657 /* SceneDelegate.swift in Sources */,
