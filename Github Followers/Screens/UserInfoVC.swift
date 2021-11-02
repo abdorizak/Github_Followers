@@ -10,6 +10,8 @@ import UIKit
 class UserInfoVC: UIViewController {
     
     let headerView = UIView()
+    let itemViewOne = UIView()
+    let itemViewTwo = UIView()
     
     var username: String!
 
@@ -38,7 +40,11 @@ class UserInfoVC: UIViewController {
     
     func layoutUI() {
         view.addSubview(headerView)
-        headerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(itemViewOne)
+        view.addSubview(itemViewTwo)
+        headerView.translatesAutoresizingMaskIntoConstraints  = false
+        itemViewOne.translatesAutoresizingMaskIntoConstraints = false
+        itemViewTwo.translatesAutoresizingMaskIntoConstraints = false
 //        headerView.backgroundColor = .secondaryLabel
         
         NSLayoutConstraint.activate([
