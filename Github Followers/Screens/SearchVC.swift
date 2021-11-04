@@ -12,6 +12,7 @@ class SearchVC: UIViewController {
     let logoImageView = UIImageView()
     let usernameTextFeild = GFTextFeild()
     let callToActionBtn = GFButton(backgroundColor: .systemGreen, title: "Get Fallowers")
+    var logoImageViewTopcConstraint: NSLayoutConstraint!
     
     var isUsernameEntered: Bool { return !usernameTextFeild.text!.isEmpty }
     
@@ -26,11 +27,12 @@ class SearchVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        usernameTextFeild.text = ""
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     func createDismissKeyboardTapGesture() {
-        let tap  = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        let tap  = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
     }
     
@@ -39,16 +41,20 @@ class SearchVC: UIViewController {
             presentGFAlertOnMainThread(title: "Empty Username", message: "Please Enter a username. weneed to know who to look for 😁", buttonTitle: "ok")
             return
         }
-        let followersListVC = FolloweListVC()
-        followersListVC.username = usernameTextFeild.text ?? ""
-        followersListVC.title = usernameTextFeild.text
+        
+        usernameTextFeild.resignFirstResponder()
+        let followersListVC = FolloweListVC(username: usernameTextFeild.text!)
         navigationController?.pushViewController(followersListVC, animated: true)
     }
     
     func configureLogoImageView() {
         view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        logoImageView.image = UIImage(named: "gh-logo")!
+        logoImageView.image = Images.ghLogo
+        
+        let topConstraintConstant = DeviceTypes.isiPhoneSE || DeviceTypes.isiPhone8Zoomed ? 20 : 80
+        
+        logoImageViewTopcConstraint = logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: CGFloat(topConstraintConstant) )
         
         NSLayoutConstraint.activate([
             logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),
