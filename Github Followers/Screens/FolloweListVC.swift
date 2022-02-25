@@ -11,7 +11,7 @@ protocol FolloweListVCDelegate: AnyObject {
     func didRequestFollowers(for username: String)
 }
 
-class FolloweListVC: UIViewController {
+class FolloweListVC: GFDataLoadingVC {
 
     enum Section { case main }
     
@@ -50,8 +50,6 @@ class FolloweListVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
-        
-        
     }
     
     @objc func addBtnTapped() {
@@ -201,7 +199,7 @@ extension FolloweListVC: FolloweListVCDelegate {
     func didRequestFollowers(for username: String) {
         // Get followers for that user
         self.username   = username
-        title      = username
+        title           = username
         page = 1
         followers.removeAll()
         filterFollowers.removeAll()
