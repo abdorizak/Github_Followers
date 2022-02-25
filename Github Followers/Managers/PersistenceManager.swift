@@ -59,7 +59,6 @@ enum PersistenceManager {
     }
     
     static func save(favorite: [Follower]) -> GFErrors? {
-        
         do {
             let encoder = JSONEncoder()
             let encodeFovarite = try encoder.encode(favorite)
