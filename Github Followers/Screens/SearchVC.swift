@@ -19,6 +19,7 @@ class SearchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        view.addSubViews(logoImageView, usernameTextFeild, callToActionBtn)
         configureLogoImageView()
         configureTextField()
         configureCallActionBtn()
@@ -43,12 +44,11 @@ class SearchVC: UIViewController {
         }
         
         usernameTextFeild.resignFirstResponder()
-        let followersListVC = FolloweListVC(username: usernameTextFeild.text!)
+        let followersListVC = FollowerListVC(username: usernameTextFeild.text!)
         navigationController?.pushViewController(followersListVC, animated: true)
     }
     
     func configureLogoImageView() {
-        view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         logoImageView.image = Images.ghLogo
         
@@ -65,7 +65,6 @@ class SearchVC: UIViewController {
     }
     
     func configureTextField() {
-        view.addSubview(usernameTextFeild)
         usernameTextFeild.delegate = self
         
         NSLayoutConstraint.activate([
@@ -78,7 +77,6 @@ class SearchVC: UIViewController {
 
     
     func configureCallActionBtn() {
-        view.addSubview(callToActionBtn)
         callToActionBtn.addTarget(self, action: #selector(pushFollowerListVC), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
