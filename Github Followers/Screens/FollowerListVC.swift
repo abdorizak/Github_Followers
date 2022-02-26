@@ -7,11 +7,11 @@
 
 import UIKit
 
-protocol FolloweListVCDelegate: AnyObject {
+protocol FollowerListVCDelegate: AnyObject {
     func didRequestFollowers(for username: String)
 }
 
-class FolloweListVC: GFDataLoadingVC {
+class FollowerListVC: GFDataLoadingVC {
 
     enum Section { case main }
     
@@ -142,7 +142,7 @@ class FolloweListVC: GFDataLoadingVC {
 }
 
 
-extension FolloweListVC: UICollectionViewDelegate {
+extension FollowerListVC: UICollectionViewDelegate {
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         let offSetY = scrollView.contentOffset.y
@@ -174,7 +174,7 @@ extension FolloweListVC: UICollectionViewDelegate {
 }
 
 
-extension FolloweListVC: UISearchResultsUpdating, UISearchBarDelegate {
+extension FollowerListVC: UISearchResultsUpdating, UISearchBarDelegate {
     
     func updateSearchResults(for searchController: UISearchController) {
         guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
@@ -195,7 +195,7 @@ extension FolloweListVC: UISearchResultsUpdating, UISearchBarDelegate {
     
 }
 
-extension FolloweListVC: FolloweListVCDelegate {
+extension FollowerListVC: FollowerListVCDelegate {
     func didRequestFollowers(for username: String) {
         // Get followers for that user
         self.username   = username
