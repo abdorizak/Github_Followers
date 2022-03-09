@@ -41,7 +41,6 @@ class FavoritesVC: GFDataLoadingVC {
     func getFavorites() {
         PersistenceManager.retrieveFavorites { [weak self] result in
             guard let self = self else { return }
-            
             switch result {
             case .success(let favorites):
                 self.updateUI(with: favorites )
