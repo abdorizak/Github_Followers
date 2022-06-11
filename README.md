@@ -1,5 +1,5 @@
 # Github Followers
-
+Practice take home project with all the bells and whistles built with programmatic views. Part of Sean Allen's Swift take home project course.
 
 ## Concepts included
 
