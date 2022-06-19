@@ -20,3 +20,7 @@ Practice take home project with all the bells and whistles built with programmat
 - Network manager with URLSession and Codable
 - Persistence manager for UserDefaults
 - Swift 5 result type and error handling
+
+
+### ***Credit***
+***Abdorizak Abdalla (iOS Developer)***
